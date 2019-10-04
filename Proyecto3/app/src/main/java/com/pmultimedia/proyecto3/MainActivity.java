@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void salto6(View v) {
+    public void salto7(View v) {
 
-        Intent saltar = new Intent(this,Activity6.class);
+        Intent saltar = new Intent(this,FinalActivity.class);
         startActivity(saltar);
 
     }

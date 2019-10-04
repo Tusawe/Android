@@ -3,23 +3,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ff0000">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Main Activity"/>
+        android:textSize="30sp"
+        android:text="Activity 2"
+        android:background="#ffffff"
+        android:textColor="#000000"/>
 
     <Button
-        android:id="@+id/boton1_salto6"
+        android:id="@+id/boton1_salto5"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:text="Activity 6"
-        android:onClick="salto6"/>
+        android:text="Activity 5"
+        android:onClick="salto5"/>
 
 </LinearLayout>

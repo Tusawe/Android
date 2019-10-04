@@ -3,17 +3,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ff00ff">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Activity 6"/>
+        android:textSize="30sp"
+        android:text="Activity 6"
+        android:background="#ffffff"
+        android:textColor="#000000"/>
 
     <Button
-        android:id="@+id/boton6_salto5"
+        android:id="@+id/boton1_salto5"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="100dp"
