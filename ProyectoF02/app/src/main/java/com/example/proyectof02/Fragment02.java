@@ -5,33 +5,37 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 
 public class Fragment02 extends AppCompatActivity {
-
-    FragmentManager FM = getSupportFragmentManager();
-    FragmentTransaction FT = FM.beginTransaction();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment02);
 
-    }
+        Fragmento1 fragmento1 = new Fragmento1();
+        Fragmento2 fragmento2 = new Fragmento2();
 
-    public void pulsar1(View v) {
+        FragmentManager FM = getSupportFragmentManager();
+        FragmentTransaction FT = FM.beginTransaction();
+        WindowManager WM = getWindowManager();
+        Display DP = WM.getDefaultDisplay();
 
-        Fragmento1 fragment1 = new Fragmento1();
-        FT.add(R.id.contenedor, fragment1);
-        FT.commit();
+        if (DP.getRotation() == Surface.ROTATION_90) {
 
-    }
+            FT.replace(R.id.contenedor, fragmento1).commit();
 
-    public void pulsar2(View v) {
+        } else  {
 
-        Fragmento2 fragment2 = new Fragmento2();
-        FT.add(R.id.contenedor, fragment2);
-        FT.commit();
+            FT.replace(R.id.contenedor, fragmento2).commit();
+
+        }
 
     }
 
