@@ -5,12 +5,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/fragmento1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:ignore="Suspicious0dp"
-        android:name="com.pmultimedia.proyectof01.Fragmento1"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/fragmento1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:name="com.pmultimedia.proyectof01.Fragmento1"/>
+
+        <fragment
+            android:id="@+id/fragmento2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:name="com.pmultimedia.proyectof01.Fragmento2"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/fragmento3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:name="com.pmultimedia.proyectof01.Fragmento2"/>
+
+        <fragment
+            android:id="@+id/fragmento4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:name="com.pmultimedia.proyectof01.Fragmento1"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

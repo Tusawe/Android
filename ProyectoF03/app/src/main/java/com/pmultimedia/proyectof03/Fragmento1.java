@@ -5,9 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
+
+import static android.app.ProgressDialog.show;
 
 public class Fragmento1 extends ListFragment {
 
@@ -28,6 +33,15 @@ public class Fragmento1 extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragmento1, container, false);
     }
+
+    @Override
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        Toast.makeText(getActivity(),"Ha pulsado " + artistas[position], Toast.LENGTH_SHORT).show();
+
+    }
+
 }
 
 

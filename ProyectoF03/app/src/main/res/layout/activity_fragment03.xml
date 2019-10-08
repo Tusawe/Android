@@ -11,4 +11,11 @@
         android:layout_weight="1"
         android:name="com.pmultimedia.proyectof03.Fragmento1"/>
 
+    <fragment
+        android:id="@+id/fragmento2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:name="com.pmultimedia.proyectof03.Fragmento1"/>
+
 </LinearLayout>
