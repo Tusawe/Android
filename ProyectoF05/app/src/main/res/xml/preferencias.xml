@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="PREFERENCIAS EN LINEA">
+
+        <CheckBoxPreference
+            android:key="valor1"
+            android:title="PREFERENCIAS CHECKBOX"
+            android:summary="ESTO ESU UN CHECKBOX."/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="PREFERENCIAS EN CUADRO DE DIALOGO">
+
+        <EditTextPreference
+            android:key="valor2"
+            android:title="CAJA DE TEXTO"
+            android:summary="UN EJEMPLO DE CUADRO DE DIALOGO."
+            android:dialogTitle="TECLEA TU EQUIPO FAVORITO"/>
+
+        <ListPreference
+            android:key="valor3"
+            android:title="PREFERENCIAS EN LISTA"
+            android:summary="UN EJEMPLO DE LISTADO"
+            android:entries="@array/ciclo"
+            android:entryValues="@array/valores"
+            android:dialogTitle="¿CUAL ES TU CICLO?"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
