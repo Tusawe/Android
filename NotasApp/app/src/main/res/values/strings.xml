@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="title">Title</string>
+    <string name="boton">ADD NOTE</string>
+    <string name="emptyTitle">Titulo necesario</string>
+    <string name="noteAdded">Note Added</string>
+    <string name="text">Text</string>
+    <string name="noteRemoved">Note Removed</string>
+</resources>
