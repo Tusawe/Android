@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="valores">values</string-array>
 
     <string-array name="ciclo">
 
@@ -9,4 +8,5 @@
         <item>DAW</item>
 
     </string-array>
+    <string-array name="valores">valores</string-array>
 </resources>

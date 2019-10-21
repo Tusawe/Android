@@ -30,4 +30,47 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="PREFERENCIAS EN OTRA PANTALLA">
+
+        <PreferenceScreen
+            android:key="valor4"
+            android:title="PREFERENCIAS DE PANTALLA"
+            android:summary="PODEMOS RECUÊRAR LA SELECCION">
+
+            <CheckBoxPreference
+                android:key="valor5"
+                android:title="PREFERENCIAS ALTERNATIVAS"
+                android:summary="MUESTRA OPCIONES EN OTRA PANTALLA"/>
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="PREFERENCIAS DE APLICACION"
+            android:summary="LANZAMOS UNA NUEVA ACTIVITY COMO UN INTENT">
+
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://www.iesvirgendelcarmen.com/moodle/"/>
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="PREFERENCIAS DE ATRIBUTOS">
+
+        <CheckBoxPreference
+            android:key="valor6"
+            android:title="CHECKBOX PADRE"
+            android:summary="SI LO PULSAS MUESTRA EL HIJO"/>
+
+        <CheckBoxPreference
+            android:key="valor7"
+            android:dependency="valor6"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:title="CHECKBOX HIJO"
+            android:summary="PUEDEN ANDARSE CHECKBOX"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
