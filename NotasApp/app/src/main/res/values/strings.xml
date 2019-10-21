@@ -6,4 +6,6 @@
     <string name="noteAdded">Note Added</string>
     <string name="text">Text</string>
     <string name="noteRemoved">Note Removed</string>
+    <string name="errorToAdd">ERROR TO ADD A NEW NOTE</string>
+    <string name="cantNoteRemoved">NOT CAN REMOVE THIS NOTE</string>
 </resources>

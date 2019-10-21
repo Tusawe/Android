@@ -11,19 +11,24 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val notes = mutableListOf<Note>()
+    private var notes = mutableListOf<Note>()
     lateinit var editTextTitle: EditText
     lateinit var editTextBody: EditText
     lateinit var listViewNotes : ListView
     lateinit var adapter: ArrayAdapter<Note>
+    lateinit var notesDBHelper : NotesDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        notesDBHelper = NotesDBHelper(this)
+
         editTextTitle = findViewById(R.id.title)
         editTextBody = findViewById(R.id.body)
         listViewNotes = findViewById(R.id.noteList)
+
+        notes = notesDBHelper.readAllNotes()
 
         adapter = ArrayAdapter<Note>(this, android.R.layout.simple_list_item_1, notes)
 
@@ -31,21 +36,35 @@ class MainActivity : AppCompatActivity() {
 
         listViewNotes.setOnItemClickListener { adapterView, view, position, id ->
 
-            val note = notes[position]
-            editTextTitle.setText(note.titulo)
-            editTextBody.setText(note.body)
+            updateNote(position)
 
         }
 
         listViewNotes.setOnItemLongClickListener { adapterView, view, position, id ->
 
-            notes.removeAt(position)
-            adapter.notifyDataSetChanged()
-            Toast.makeText(this, resources.getString(R.string.noteRemoved), Toast.LENGTH_SHORT).show()
+            removeNote(position)
             true
 
         }
 
+    }
+
+    private fun removeNote(position: Int) {
+        var noteid = notes[position].id
+        val result = notesDBHelper.deleteNote(noteid)
+        if (result) {
+            notes.removeAt(position)
+            adapter.notifyDataSetChanged()
+            Toast.makeText(this, resources.getString(R.string.noteRemoved), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, resources.getString(R.string.cantNoteRemoved), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun updateNote(position: Int) {
+        val note = notes[position]
+        editTextTitle.setText(note.titulo)
+        editTextBody.setText(note.body)
     }
 
     fun addNote(v: View) {
@@ -54,12 +73,22 @@ class MainActivity : AppCompatActivity() {
 
             val title = editTextTitle.text.toString()
             val body = editTextBody.text.toString()
-            val date = Date()
-            val nota = Note(title, body, date)
-            notes.add(nota)
-            adapter.notifyDataSetChanged()
-            resetNotesViews()
-            Toast.makeText(this, resources.getString(R.string.noteAdded), Toast.LENGTH_SHORT).show()
+            val date = Date().toString()
+            var nota = Note(id = date+title+(Math.random()*1000), titulo = title, body = body, date = date)
+            var result = notesDBHelper.insertNote(nota)
+            if (result) {
+
+                notes.add(nota)
+                adapter.notifyDataSetChanged()
+                resetNotesViews()
+                Toast.makeText(this, resources.getString(R.string.noteAdded), Toast.LENGTH_SHORT).show()
+
+            } else {
+
+                Toast.makeText(this, resources.getString(R.string.errorToAdd), Toast.LENGTH_LONG).show()
+
+            }
+
 
         } else {
 
@@ -76,3 +105,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+

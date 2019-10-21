@@ -1,8 +1,6 @@
 package com.dinterfaces.notasapp
 
-import java.util.*
-
-data class Note(var titulo:String, var body:String, var date:Date) {
+data class Note(var id:String, var titulo:String, var body:String, var date:String) {
 
     override fun toString(): String = titulo
 
