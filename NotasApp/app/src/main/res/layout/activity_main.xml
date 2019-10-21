@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFE29E">
+    android:background="#FFFFFF">
 
     <EditText
         android:layout_width="match_parent"
@@ -39,6 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="#FFD66E"/>
+        android:background="#FFE29E"/>
 
 </LinearLayout>
