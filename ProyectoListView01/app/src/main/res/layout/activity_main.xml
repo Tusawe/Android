@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:layout_below="@+id/title"/>
+        android:layout_below="@+id/title"
+        android:divider="#ff0000"
+        android:dividerHeight="2dp"/>
 
 </RelativeLayout>
