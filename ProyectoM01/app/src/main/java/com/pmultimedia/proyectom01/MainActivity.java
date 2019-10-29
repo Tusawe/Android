@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
 
