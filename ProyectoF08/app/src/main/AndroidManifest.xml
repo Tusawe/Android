@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pmultimedia.proyectof07">
+    package="com.pmultimedia.proyectof08">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragment07">
+        <activity android:name=".Fragment08">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
