@@ -6,6 +6,4 @@
     android:id="@+id/contenedor"
     android:background="#fff000">
 
-
-
 </FrameLayout>
