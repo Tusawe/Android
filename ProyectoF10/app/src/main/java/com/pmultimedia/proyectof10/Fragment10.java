@@ -19,8 +19,8 @@ public class Fragment10 extends FragmentActivity implements Fragmento1.Callbacks
     @Override
     public void onEntradaSeleccionada(String id) {
         Toast.makeText(getBaseContext(),"TOCADO EL " + id, Toast.LENGTH_LONG).show();
-        detalleIntent.putExtra(Fragmento3.ARG_ID_ENTRADA_SELECCIONADA, id);
         detalleIntent = new Intent(this, Fragmento2.class);
+        detalleIntent.putExtra(Fragmento3.ARG_ID_ENTRADA_SELECCIONADA, id);
         startActivity(detalleIntent);
     }
 }

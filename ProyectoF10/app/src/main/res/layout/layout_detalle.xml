@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frame_contenedor"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff000"
-    android:id="@+id/frame_contenedor">
+    android:background="#fff000">
 
     <TextView
         android:id="@+id/textotitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:textSize="22sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Large Text"
-        android:textStyle="bold"/>
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imagen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:padding="20dp"/>
 
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:contentDescription="Descripcion del contenido de la imagen"
         android:scaleType="fitXY"
-        android:src="@android:drawable/ic_menu_gallery"/>
+        android:src="@android:drawable/ic_menu_gallery"
+        app:layout_constraintBottom_toTopOf="@+id/textocontenido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textotitle" />
 
     <TextView
         android:id="@+id/textocontenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="Small Text"
         android:textSize="15sp"
-        android:layout_weight="2"
-        android:gravity="center"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen"
+        android:padding="20dp"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
