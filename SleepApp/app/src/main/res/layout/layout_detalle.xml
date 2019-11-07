@@ -1,0 +1,50 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frame_contenedor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009AFF">
+
+    <TextView
+        android:id="@+id/textotitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Large Text"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imagen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textColor="#ffffff"/>
+
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="Descripcion del contenido de la imagen"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/ic_menu_gallery"
+        app:layout_constraintBottom_toTopOf="@+id/textocontenido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textotitle" />
+
+    <TextView
+        android:id="@+id/textocontenido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Small Text"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen"
+        android:padding="20dp"
+        android:textColor="#ffffff"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
