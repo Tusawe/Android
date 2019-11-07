@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="encuadernacionArray">
+        <item>-- Elegir encuadernación --</item>
+        <item>EBook</item>
+        <item>Rústica</item>
+        <item>Tapa blanda</item>
+        <item>Cartoné</item>
+        <item>Grapado</item>
+    </string-array>
+</resources>
