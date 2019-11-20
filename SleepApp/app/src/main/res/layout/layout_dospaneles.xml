@@ -3,7 +3,8 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:divider="?android:attr/dividerHorizontal"
-    android:showDividers="middle">
+    android:showDividers="middle"
+    android:background="#009AFF">
 
     <fragment
         android:id="@+id/fragment_listado"
