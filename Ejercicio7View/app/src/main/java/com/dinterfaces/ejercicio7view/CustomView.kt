@@ -1,4 +1,4 @@
-package com.dinterfaces.ejercicio6view
+package com.dinterfaces.ejercicio7view
 
 import android.content.Context
 import android.graphics.*
@@ -11,19 +11,16 @@ class CustomView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0 ) : View(context, attrs, defStyle) {
 
-    var touchx = 0f
-    var touchy = 0f
-    var touching = false
+    val list = mutableListOf<PointF>()
 
     var paintstroke = Paint().apply {
-        color = Color.BLACK
+        color = Color.GREEN
         style = Paint.Style.STROKE
         strokeWidth = 20f
     }
 
     var paint = Paint().apply {
         color = Color.RED
-        style = Paint.Style.FILL
     }
         set(value) {
             field = value
@@ -38,19 +35,15 @@ class CustomView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas) {
-        if(touching) {
-            canvas.drawCircle(touchx, touchy, 20f, paint)
-            canvas.drawCircle(touchx, touchy, 30f, paintstroke)
+        if (list.size > 1) {
+            for (i in 0 until list.size - 1) {
+                canvas.drawLine(list[i].x, list[i].y, list[i + 1].x, list[i + 1].y, paintstroke)
+            }
         }
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        when(event.action){
-            MotionEvent.ACTION_DOWN -> touching = false
-            MotionEvent.ACTION_UP -> touching = true
-        }
-        touchx = event.x
-        touchy = event.y
+        list.add(PointF(event.x, event.y))
         invalidate()
         return true
     }
@@ -75,6 +68,6 @@ class CustomView @JvmOverloads constructor(
     companion object{
         private const val DEFAULT_WIDTH = 100
         private const val DEFAULT_HEIGHT = 100
-        private const val DEFAULT_BACKGRAUNDCOLOR = Color.WHITE
+        private const val DEFAULT_BACKGRAUNDCOLOR = Color.BLACK
     }
 }
