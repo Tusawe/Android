@@ -1,4 +1,4 @@
-package com.dinterfaces.ejercicio5view
+package com.dinterfaces.ejercicio6view
 
 import android.content.Context
 import android.graphics.*
@@ -32,28 +32,16 @@ class CustomView @JvmOverloads constructor(
             invalidate()
         }
 
-    var bitmap: Bitmap
-
     init {
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.CustomView,0, 0)
         val color = ta.getColor(R.styleable.CustomView_backgroundColor, DEFAULT_BACKGROUNDCOLOR)
         paint.color = color
         ta.recycle()
-        bitmap = context.getDrawable(R.drawable.fondo)?.toBitmap(300,400)!!
     }
 
     var angulo = 0f
     override fun onDraw(canvas: Canvas) {
-
-        var sentido = 1
-        if(giro) sentido = velocidad.toInt()/10
-        else sentido = -(velocidad.toInt())/10
-
         canvas.drawRect(0f,0f,width.toFloat(), height.toFloat(), paint)
-        canvas.rotate(angulo, width/2f, height/2f)
-        canvas.drawBitmap(bitmap, width.toFloat()/2-150f, height.toFloat()/2-200f, null)
-        angulo+=sentido
-        postInvalidateDelayed(1)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -76,9 +64,7 @@ class CustomView @JvmOverloads constructor(
     companion object {
         private const val DEFAULT_WIDTH = 100
         private const val DEFAULT_HEIGHT = 100
-        private const val DEFAULT_BACKGROUNDCOLOR = Color.BLACK
-        var giro : Boolean = true
-        var velocidad : Long = 0
+        private const val DEFAULT_BACKGROUNDCOLOR = Color.WHITE
     }
 
 }
