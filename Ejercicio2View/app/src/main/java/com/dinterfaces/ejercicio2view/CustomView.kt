@@ -35,14 +35,9 @@ class CustomView @JvmOverloads constructor(
         canvas.drawRect(0f,0f,width.toFloat(), height.toFloat(), paint)
         for(x in 0 until 4){
             for(y in 0 until 3){
-//                canvas.drawBitmap(bitmap, (y*width).toFloat(), (x*height).toFloat(), null)
-                canvas.drawBitmap(bitmap, y*300.toFloat(), x*200.toFloat(), null)
+                canvas.drawBitmap(bitmap, y*bitmap.width.toFloat(), x*bitmap.height.toFloat(), null)
             }
         }
-//        canvas.drawBitmap(bitmap, 0f, 0f, null)
-//        val src = Rect(0,0, bitmap.width*2, bitmap.height*6)
-//        val dst = Rect(0,0, width, height)
-//        canvas.drawBitmap(bitmap, src, dst, null)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
