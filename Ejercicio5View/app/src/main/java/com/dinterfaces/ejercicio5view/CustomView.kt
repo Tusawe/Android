@@ -46,8 +46,8 @@ class CustomView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
 
         var sentido = 1
-        if(giro) sentido = 2
-        else sentido = -2
+        if(giro) sentido = velocidad.toInt()/10
+        else sentido = -(velocidad.toInt())/10
 
         canvas.drawRect(0f,0f,width.toFloat(), height.toFloat(), paint)
         canvas.rotate(angulo, width/2f, height/2f)
@@ -78,6 +78,7 @@ class CustomView @JvmOverloads constructor(
         private const val DEFAULT_HEIGHT = 100
         private const val DEFAULT_BACKGROUNDCOLOR = Color.BLACK
         var giro : Boolean = true
+        var velocidad : Long = 0
     }
 
 }
