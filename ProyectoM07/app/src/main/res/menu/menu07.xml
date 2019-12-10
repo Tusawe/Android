@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/MnuOpc1" android:title="OPCIÓN DE MENÚ 1"
+        android:icon="@android:drawable/ic_menu_preferences"></item>
+    <item android:id="@+id/MnuOpc2" android:title="OPCIÓN DE MENÚ 2"
+        android:icon="@android:drawable/ic_menu_compass"></item>
+    <item android:id="@+id/MnuOpc3" android:title="OPCIÓN DE MENÚ 3"
+        android:icon="@android:drawable/ic_menu_agenda">
+        <menu>
+            <group android:id="@+id/grupo1"
+                android:checkableBehavior="single">
+                <item android:id="@+id/SubMen1"
+                    android:title="SUBOPCIÓN 3-1" />
+                <item android:id="@+id/SubMen2"
+                    android:title="SUBOPCIÓN 3-1" />
+            </group>
+        </menu>
+    </item>
+</menu>
