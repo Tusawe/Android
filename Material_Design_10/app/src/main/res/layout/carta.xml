@@ -10,11 +10,7 @@
         app:cardUseCompatPadding="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        app:cardBackgroundColor="#009B3C"
-=======
-        app:cardBackgroundColor="#C03800"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
+        app:cardBackgroundColor="#B14900"
         app:cardCornerRadius="6dp"
         app:cardElevation="10dp"
         tools:layout_editor_absoluteX="114dp"

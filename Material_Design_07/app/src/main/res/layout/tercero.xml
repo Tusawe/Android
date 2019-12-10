@@ -2,11 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="#3AB76C">
-=======
     android:background="#673AB7">
->>>>>>> cede765070a70bc6254a7c56139990221d340437
 
     <TextView
         android:layout_width="wrap_content"

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-=======
     xmlns:tools="http://schemas.android.com/tools"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="#3F51B5">
@@ -25,11 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-<<<<<<< HEAD
-        android:background="#6AFF00"
-=======
         android:background="#fff000"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
         android:src="@android:drawable/arrow_down_float"
         android:visibility="invisible"
         app:fabSize="mini"
@@ -42,11 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-<<<<<<< HEAD
-        android:background="#AD4AC3"
-=======
         android:background="#8BC34A"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
         android:src="@android:drawable/alert_dark_frame"
         android:visibility="invisible"
         app:fabSize="mini"

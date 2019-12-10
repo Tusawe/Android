@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-=======
     xmlns:tools="http://schemas.android.com/tools"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -26,11 +23,7 @@
                 android:id="@+id/toolBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
-                android:background="#008DFF"
-=======
                 android:background="#2196F3"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
                 android:popupTheme="@style/Theme.AppCompat.Light"
                 android:subtitleTextAppearance="@style/subtitulo"
                 android:theme="@style/tarjeta"

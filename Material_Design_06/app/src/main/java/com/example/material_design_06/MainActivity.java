@@ -30,14 +30,11 @@ public class MainActivity extends AppCompatActivity {
         tercerTab.setIcon(R.drawable.ic_launcher_background);
         tabLayout.addTab(tercerTab,true);
 
-<<<<<<< HEAD
-=======
         //tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER); Pone en el centro los tres tab
         //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         //tabLayout.setTabMode(TabLayout.MODE_FIXED);
->>>>>>> cede765070a70bc6254a7c56139990221d340437
 
         tabLayout.setTabTextColors(Color.RED, Color.WHITE);
 

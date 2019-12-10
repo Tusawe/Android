@@ -3,11 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-<<<<<<< HEAD
-    android:background="#FFE900"
-=======
     android:background="#948B2B"
->>>>>>> cede765070a70bc6254a7c56139990221d340437
     android:layout_height="match_parent"
     android:orientation="vertical">
 
