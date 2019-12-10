@@ -13,6 +13,11 @@
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_margin="16dp">
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> cede765070a70bc6254a7c56139990221d340437
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </LinearLayout>

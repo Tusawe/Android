@@ -12,6 +12,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     boolean abierto = false;
+<<<<<<< HEAD
+=======
+    boolean abierto1 = false;
+>>>>>>> cede765070a70bc6254a7c56139990221d340437
     FloatingActionButton fab1;
     FloatingActionButton fab2;
     FloatingActionButton fab3;

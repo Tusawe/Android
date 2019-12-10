@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/reciclador"
+<<<<<<< HEAD
     android:background="#FFBE8E"
+=======
+    android:background="#D6CEC8"
+>>>>>>> cede765070a70bc6254a7c56139990221d340437
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
