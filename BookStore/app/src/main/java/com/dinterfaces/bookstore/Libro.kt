@@ -1,8 +1,10 @@
 package com.dinterfaces.bookstore
 
-class Libro (titulo : String, portada : String,
-             isbn : String, autores : String,
-             encuadernacion : String, fPublicacion : String,
-             sinopsis : String, nPaginas : String,
-             precio : String, formato : String,
-             editorial : String)
+import java.io.Serializable
+
+data class Libro (var titulo : String, var portada : String,
+                  var isbn : String, var autores : String,
+                  var encuadernacion : String, var fPublicacion : String,
+                  var sinopsis : String, var nPaginas : String,
+                  var precio : String, var formato : String,
+                  var editorial : String) : Serializable

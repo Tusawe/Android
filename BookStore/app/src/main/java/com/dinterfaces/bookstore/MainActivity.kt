@@ -94,11 +94,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun insertarLibro() {
-
+        // portada.text.toString()
         if(validar()){
             val libro = Libro(
                 titulo.text.toString(),
-                portada.text.toString(),
+                "http://abccanino.es/wp-content/uploads/2017/06/19.jpg",
                 isbn.text.toString(),
                 autores.text.toString(),
                 encuadernacion.getItemAtPosition(encuadernacion.selectedItemPosition).toString(),

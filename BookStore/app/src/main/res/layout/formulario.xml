@@ -43,8 +43,8 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
-            android:max="300"
             android:inputType="numberDecimal"
+            android:max="300"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/sinopsis" />
@@ -125,10 +125,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp"
-            android:text="   Insertar"
             android:drawableLeft="@drawable/ic_book"
+            android:text="   Insertar"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editorial"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/limpiar"
             app:layout_constraintTop_toBottomOf="@+id/nLibrosTxt" />
 
         <TextView
@@ -138,9 +140,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_black"
             android:gravity="center"
             android:text="Add New Book"
-            android:fontFamily="@font/roboto_black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -160,10 +162,11 @@
             android:id="@+id/limpiar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:text="Limpiar"
             app:layout_constraintBottom_toBottomOf="@+id/insertar"
             app:layout_constraintEnd_toStartOf="@+id/insertar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/listaLibros"
             app:layout_constraintTop_toTopOf="@+id/insertar" />
 
         <TextView
@@ -213,6 +216,17 @@
             app:layout_constraintBottom_toBottomOf="@+id/nPaginas"
             app:layout_constraintEnd_toEndOf="@+id/sinopsis"
             app:layout_constraintTop_toTopOf="@+id/nPaginas" />
+
+        <Button
+            android:id="@+id/listaLibros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listar libros"
+            app:layout_constraintBottom_toBottomOf="@+id/limpiar"
+            app:layout_constraintEnd_toStartOf="@+id/limpiar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/limpiar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
