@@ -1,6 +1,8 @@
 package com.pmultimedia.sensores08;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -24,7 +26,7 @@ public class Sensores08 extends AppCompatActivity implements SensorEventListener
         Sensor acelerometro = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         MiVistaPersonal miVista = new MiVistaPersonal(this);
 
-        LinearLayout mainLayout = (LinearLayout)findViewById(R.id.lay);
+        ConstraintLayout mainLayout = (ConstraintLayout)findViewById(R.id.lay);
         mainLayout.addView(miVista);
 
     }

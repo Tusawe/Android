@@ -43,6 +43,7 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
+            android:max="300"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
             app:layout_constraintStart_toEndOf="@+id/textView"
@@ -122,12 +123,13 @@
             android:id="@+id/insertar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp"
-            android:text="Insertar"
+            android:text="   Insertar"
+            android:drawableLeft="@drawable/ic_book"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/editorial"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+            app:layout_constraintTop_toBottomOf="@+id/nLibrosTxt" />
 
         <TextView
             android:id="@+id/bookstore"
@@ -138,6 +140,7 @@
             android:layout_marginEnd="16dp"
             android:gravity="center"
             android:text="Add New Book"
+            android:fontFamily="@font/roboto_black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +172,7 @@
             android:layout_height="21dp"
             android:layout_marginEnd="24dp"
             android:text="Nº de libros:"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/radioButton"
             app:layout_constraintEnd_toStartOf="@+id/nLibros"
             app:layout_constraintTop_toTopOf="@+id/radioButton" />
@@ -179,7 +182,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
-            android:text="1"
+            android:text="0"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/editorial"
             app:layout_constraintTop_toTopOf="@+id/nLibrosTxt" />
