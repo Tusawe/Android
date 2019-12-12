@@ -1,9 +1,11 @@
 package com.dinterfaces.bookstore
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -13,15 +15,21 @@ class ListaLibros : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_libros)
 
-        val provider: ViewModelProvider = ViewModelProviders.of(this)
-        val libroViewModel = provider.get(LibroViewModel::class.java)
-
-        val hotelRecyclerView = findViewById<RecyclerView>(R.id.listaLibros).apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            //layoutManager = GridLayoutManager(this@MainActivity,4, GridLayoutManager.HORIZONTAL,false)
-            adapter = LibroAdapter(libroViewModel.libros, object : LibroAdapter.OnItemClickListener {
+        val libroRecyclerView = findViewById<RecyclerView>(R.id.listaLibros).apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = LibroAdapter(LibrosSingleton.catalogo, object : LibroAdapter.OnItemClickListener {
                 override fun onClicked(libro: Libro) {
-                    Toast.makeText(this, libro.titulo, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, libro.titulo, Toast.LENGTH_SHORT).show()
+//                    val intent = Intent(context, LibroDetalle::class.java)
+//                    intent.putExtra("book", libro)
+//                    startActivity(intent)
+                    val detailFragment = DetalleFragment()
+                    val bundle = Bundle()
+                    bundle.putParcelable("book", libro)
+                    detailFragment.arguments = bundle
+
+                    supportFragmentManager.beginTransaction().replace(R.id.container, detailFragment).addToBackStack(null).commit()
+
                 }
 
             })

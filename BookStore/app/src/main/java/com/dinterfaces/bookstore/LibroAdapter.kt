@@ -26,10 +26,12 @@ class LibroAdapter(private val libros: List<Libro>, val itemClickListener: OnIte
     inner class LibroViewHolder(view: View) :RecyclerView.ViewHolder(view) {
 
         val nameTextView = itemView.findViewById<TextView>(R.id.book_name)
+        val priceTextView = itemView.findViewById<TextView>(R.id.book_price)
         val photoImageView = itemView.findViewById<ImageView>(R.id.book_photo)
 
         fun bind(libro: Libro, clickListener: OnItemClickListener) {
             nameTextView.text = libro.titulo
+            priceTextView.text = "Precio: " + libro.precio + "€"
             Glide
                 .with(itemView.context)
                 .load(libro.portada)

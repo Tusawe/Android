@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/portada"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Portada"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+        <EditText
+            android:id="@+id/isbn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="ISBN"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/portada" />
+
+        <SeekBar
+            android:id="@+id/nPaginas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:max="300"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/sinopsis" />
+
+        <EditText
+            android:id="@+id/autores"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Autores"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/isbn" />
+
+        <Spinner
+            android:id="@+id/encuadernacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:entries="@array/encuadernacionArray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autores" />
+
+        <EditText
+            android:id="@+id/fechaPublicacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Fecha de publicación"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/encuadernacion" />
+
+        <EditText
+            android:id="@+id/titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Título"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookstore" />
+
+        <EditText
+            android:id="@+id/sinopsis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Sinopsis"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fechaPublicacion" />
+
+        <EditText
+            android:id="@+id/precio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nPaginas" />
+
+        <Button
+            android:id="@+id/insertar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:drawableLeft="@drawable/ic_book"
+            android:text="   Insertar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/limpiar"
+            app:layout_constraintTop_toBottomOf="@+id/nLibrosTxt" />
+
+        <TextView
+            android:id="@+id/bookstore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_black"
+            android:gravity="center"
+            android:text="Add New Book"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <AutoCompleteTextView
+            android:id="@+id/editorial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Editorial"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/precio" />
+
+        <Button
+            android:id="@+id/limpiar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Limpiar"
+            app:layout_constraintBottom_toBottomOf="@+id/insertar"
+            app:layout_constraintEnd_toStartOf="@+id/insertar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/listaLibros"
+            app:layout_constraintTop_toTopOf="@+id/insertar" />
+
+        <TextView
+            android:id="@+id/nLibrosTxt"
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="24dp"
+            android:text="Nº de libros:"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton"
+            app:layout_constraintEnd_toStartOf="@+id/nLibros"
+            app:layout_constraintTop_toTopOf="@+id/radioButton" />
+
+        <TextView
+            android:id="@+id/nLibros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="0"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/editorial"
+            app:layout_constraintTop_toTopOf="@+id/nLibrosTxt" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Formato digital"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editorial" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nº de páginas: "
+            app:layout_constraintBottom_toTopOf="@+id/precio"
+            app:layout_constraintStart_toStartOf="@+id/sinopsis"
+            app:layout_constraintTop_toBottomOf="@+id/sinopsis" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/nPaginas"
+            app:layout_constraintEnd_toEndOf="@+id/sinopsis"
+            app:layout_constraintTop_toTopOf="@+id/nPaginas" />
+
+        <Button
+            android:id="@+id/listaLibros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listar libros"
+            app:layout_constraintBottom_toBottomOf="@+id/limpiar"
+            app:layout_constraintEnd_toStartOf="@+id/limpiar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/limpiar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
