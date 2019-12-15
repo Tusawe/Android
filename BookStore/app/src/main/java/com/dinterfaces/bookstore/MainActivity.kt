@@ -11,7 +11,7 @@ import com.dinterfaces.bookstore.LibrosSingleton.catalogo
 
 class MainActivity : AppCompatActivity() {
 
-    //val fragmentList = TicketListFragment()
+    val fragmentList = ListaFragment()
     val fragmentForm = FormularioFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,23 +28,23 @@ class MainActivity : AppCompatActivity() {
     private fun setDefaultFragment() {
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.container, fragmentForm)
+            .add(R.id.container, fragmentList)
             .commit()
     }
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
+        menuInflater.inflate(R.menu.menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem) =
         when (item.itemId) {
-            R.id.main_menu_list -> {
+            R.id.lista -> {
                 changeFragment(fragmentList)
                 true
             }
-            R.id.main_menu_form -> {
+            R.id.formulario -> {
                 changeFragment(fragmentForm)
                 true
             }

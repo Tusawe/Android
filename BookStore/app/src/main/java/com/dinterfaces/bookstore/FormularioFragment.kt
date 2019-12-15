@@ -30,6 +30,7 @@ class FormularioFragment : Fragment() {
     lateinit var txtNPaginas : TextView
     lateinit var nLibros : TextView
     var txtFormato : String = "Físico"
+    val fragmentList = ListaFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,7 +60,7 @@ class FormularioFragment : Fragment() {
             override fun onStopTrackingTouch(p0: SeekBar?) {}
         })
         nLibros = view.findViewById(R.id.nLibros)
-        nLibros.text = "0"
+        nLibros.text = LibrosSingleton.catalogo.size.toString()
         precio = view.findViewById(R.id.precio)
         titulo = view.findViewById(R.id.titulo)
         portada = view.findViewById(R.id.portada)
@@ -90,8 +91,13 @@ class FormularioFragment : Fragment() {
         listaLibros = view.findViewById(R.id.listaLibros)
         listaLibros.setOnClickListener {
 
-            val intent = Intent (context, ListaLibros::class.java)
-            startActivity(intent)
+//            val intent = Intent (context, ListaLibros::class.java)
+//            startActivity(intent)
+
+            fragmentManager!!
+                .beginTransaction()
+                .replace(R.id.container, fragmentList)
+                .commit()
 
         }
 
