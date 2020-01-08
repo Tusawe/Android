@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="speakerArray">
+        <item>-- Seleccione un ponente --</item>
+        <item>Paco Sanchez</item>
+        <item>Lucia Mesa</item>
+        <item>Juan Ruiz</item>
+        <item>Marta Torres</item>
+    </string-array>
+
+</resources>
