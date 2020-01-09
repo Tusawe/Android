@@ -1,40 +1,46 @@
 package com.iesvirgendelcarmen.dam.toppeliculas1.Model
 
-import android.content.Context
+
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.iesvirgendelcarmen.dam.toppeliculas1.api.APIConfig
+import com.iesvirgendelcarmen.dam.toppeliculas1.api.VolleySingleton
 
 class MovieRepository {
 
-    fun getPopularMovies(context: Context, callback : MovieCallback) {
-        val queue = Volley.newRequestQueue(context)
+    fun  getPopularMovies() : LiveData<Resource<List<Movie>>> {
+
+        val liveData = MutableLiveData<Resource<List<Movie>>>()
+        liveData.value = Resource.loading()
+
+        VolleySingleton.getInstance().requestQueue
+
         val stringRequest = StringRequest(
             Request.Method.GET,
             APIConfig.POPULAR_URL,
-            Response.Listener {
+            Response.Listener { response ->
+                Log.d("LOG", response)
                 val resp = Gson().fromJson<MovieResponse>(
-                    it,
+                    response,
                     MovieResponse::class.java
                 )
-                if(resp.movies != null) callback.onMovieResponse(resp.movies!!)
-                else callback.onMovieEmpty()
+                if (resp.movies != null) {
+                    liveData.value = Resource.success(resp.movies.orEmpty())
+                } else {
+                    liveData.value = Resource.error("No more Movies")
+                }
 
             },
-            Response.ErrorListener {
-                callback.onMovieError()
+            Response.ErrorListener { error ->
+                liveData.value = Resource.error(error.message)
             }
         )
-        queue.add(stringRequest)
+        VolleySingleton.getInstance().addToRequestQueue(stringRequest)
+        return liveData
     }
-
-}
-
-interface MovieCallback {
-    fun onMovieResponse(movie: List<Movie>)
-    fun onMovieError()
-    fun onMovieEmpty()
 }
