@@ -34,22 +34,5 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences sPref = getSharedPreferences("persistencia", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sPref.edit();
 
-        btnGuardar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.putString("texto1", editText1.getText().toString());
-                editor.putString("texto2", editText2.getText().toString());
-                editor.commit();
-            }
-        });
-
-        btnRecuperar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView1.setText(sPref.getString("texto1", ""));
-                textView2.setText(sPref.getString("texto2", ""));
-            }
-        });
-
     }
 }
